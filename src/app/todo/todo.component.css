@@ -1,0 +1,51 @@
+.fee-estimator {
+  background: #fdfdfd;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 500;
+  color: #555;
+}
+
+input, select, button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  background-color: #222;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+.result {
+  margin-top: 20px;
+  background-color: #eef6f5;
+  padding: 16px;
+  border-left: 4px solid #00796b;
+}

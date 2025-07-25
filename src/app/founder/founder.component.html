@@ -1,0 +1,15 @@
+<section class="founder-section">
+  <div class="container">
+    <h2>Founders & Partners</h2>
+    <div class="founder-grid">
+      <div class="card" *ngFor="let founder of founders">
+        <div class="photo">
+          <img [src]="founder.photoUrl" [alt]="founder.name" />
+        </div>
+        <h3>{{ founder.name }}</h3>
+        <h4>{{ founder.title }}</h4>
+        <p>{{ founder.bio }}</p>
+      </div>
+    </div>
+  </div>
+</section>

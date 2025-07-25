@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #007bff;
+    color: rgb(220, 233, 218);
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  .nav a {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav a.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
