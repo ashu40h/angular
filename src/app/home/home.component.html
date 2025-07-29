@@ -1,8 +1,26 @@
 <section class="hero">
-  <div class="container">
+  <div class="hero-left-spacer"></div>
+
+  <div class="hero-right-content">
     <div class="hero-text">
-    <h1>Sharma RK & Co.</h1>
+      <h1>Sharma RK & Co.</h1>
       <h1>Chartered Accountants</h1>
+    </div>
+    <div class="hero-content">
+      <h2>Ready to Get Started?</h2>
+      <button class="cta-btn" (click)="goToTodo()">How to Calculate Income Tax.</button>
+    </div>
+  </div>
+</section>
+<section class="news-section">
+  <h2 class="news-heading">News Room</h2>
+  <div class="news-ticker">
+    <div class="news-items" [style.animationDuration]="newsDuration">
+      <div *ngFor="let post of newsPosts" class="news-item">
+        <h4>{{ post.title }}</h4>
+        <p>{{ post.content }}</p>
+        <small>{{ post.date }}</small>
+      </div>
     </div>
   </div>
 </section>
@@ -27,13 +45,4 @@
   </div>
 </section>
 
-<section class="cta">
-  <div class="container">
-    <h2>Ready to Get Started?</h2>
-    <p>Join us click below.</p>
-    <button class="cta-btn" (click)="goToTodo()">Start Calculation</button>
-  </div>
-</section>
-<section class ="footer-bottom">
 
-</section>

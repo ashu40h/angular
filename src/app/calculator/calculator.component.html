@@ -1,0 +1,19 @@
+<section class="calculator-section">
+  <div class="calculator-container">
+    <h1>Income Tax Calculator (New Regime)</h1>
+
+    <div class="form-box">
+      <label for="ctc">Enter your CTC (₹):</label>
+      <input type="number" id="ctc" [(ngModel)]="ctc" />
+
+      <button (click)="calculateTax()">Calculate Tax</button>
+    </div>
+
+    <div class="result-box" *ngIf="showResult">
+      <h3>Results</h3>
+      <p><strong>CTC:</strong> ₹{{ ctc | number }}</p>
+      <p><strong>Income Tax Payable:</strong> ₹{{ tax | number }}</p>
+      <p *ngIf="tax === 0 && income <= 1200000" class="rebate">You are eligible for full rebate under new regime.</p>
+    </div>
+  </div>
+</section>

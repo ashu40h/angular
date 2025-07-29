@@ -1,22 +1,92 @@
-<section class="fee-estimator">
-  <div class="container">
-    <h2>Fee Estimator</h2>
-    <form (ngSubmit)="calculateFee()" #feeForm="ngForm">
-      <label for="service">Select a Service:</label>
-      <select id="service" [(ngModel)]="selectedService" name="service" required>
-        <option *ngFor="let service of services" [value]="service.name">
-          {{ service.name }}
-        </option>
-      </select>
+<div class="container">
+  <h1>How to Calculate Income Tax on Salary with Example</h1>
+  <p><em>Updated on: June 20, 2025</em></p>
 
-      <label for="turnover">Enter Turnover (₹):</label>
-      <input type="number" id="turnover" [(ngModel)]="turnover" name="turnover" required />
+  <h2>What is Income Tax?</h2>
+  <p>According to the Income Tax Act, 1961, every salaried person must pay tax from their earnings. After applying eligible deductions and exemptions (e.g. under Sections 80C–80U), the resulting amount is the tax payable on salary income.</p>
 
-      <button type="submit">Estimate Fee</button>
-    </form>
+  <h2>How to Calculate Tax on Salary</h2>
+  <ol>
+    <li><strong>Gross Salary</strong> – Sum of basic salary, allowances, bonuses, and other taxable components.</li>
+    <li><strong>Exemptions</strong> – Subtract components like HRA, LTA, standard deduction (available under old regime).</li>
+    <li><strong>Deductions</strong> – Under sections such as 80C, 80D, Section 24b interest etc.</li>
+    <li><strong>Taxable Income</strong> = Gross Salary − Exemptions − Deductions.</li>
+    <li><strong>Apply Tax Slabs</strong> – Based on the old or new tax regime for the relevant financial year.</li>
+    <li><strong>Include Cess</strong> – Health & Education Cess &#64;4% on tax liability.</li>
+    <li><strong>Account for Rebates/Surcharge</strong> – e.g. rebate under Section 87A if eligible.</li>
+    <li><strong>Subtract TDS or Advance Tax</strong> if already paid.</li>
+    <li><strong>File ITR</strong> – Report income, deductions, and tax paid.</li>
+  </ol>
 
-    <div class="result" *ngIf="estimatedFee !== null">
-      <p><strong>Estimated Fee:</strong> ₹{{ estimatedFee }}</p>
-    </div>
-  </div>
-</section>
+  <h2>Income Tax on Salary Formula</h2>
+  <p><code>Taxable Income = Gross Salary − Deductions</code><br>
+     <code>Income Tax = (Taxable Income × Tax Rate) − Tax Rebate</code><br>
+     Monthly tax = total tax ÷ 12.</p>
+
+  <h2>Salary Components Explained</h2>
+  <ul>
+    <li><strong>Dearness Allowance (DA)</strong> – Adjusted for inflation; provided to public sector employees.</li>
+    <li><strong>Conveyance Allowance</strong> – Tax‑exempt up to prescribed limit.</li>
+    <li><strong>Medical Allowance</strong> – Exempt with receipts; else taxable.</li>
+    <li><strong>Leave Travel Allowance (LTA)</strong> – Exempt under conditions; two trips in four years.</li>
+    <li><strong>Bonus, Special Allowance, PF contributions</strong> – Special allowance is fully taxable; PF accumulates for retirement.</li>
+  </ul>
+
+  <div class="example">
+    <h3>New Regime (FY 2024–25 / AY 2025–26)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Income Range</th>
+          <th>Tax Rate</th>
+          <th>Tax Amount (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Up to ₹4 lakh</td><td>Exempt</td><td>₹0</td></tr>
+        <tr><td>₹4 lakh – ₹8 lakh</td><td>5%</td><td>₹20,000</td></tr>
+        <tr><td>₹8 lakh – ₹12 lakh</td><td>10%</td><td>₹40,000</td></tr>
+        <tr><td>₹12 lakh – ₹16 lakh</td><td>15%</td><td>₹60,000</td></tr>
+        <tr><td>₹16 lakh – ₹20 lakh</td><td>20%</td><td>₹80,000</td></tr>
+        <tr><td>₹20 lakh – ₹24 lakh</td><td>25%</td><td>₹1,00,000</td></tr>
+        <tr><td>Above ₹24 lakh</td><td>30%</td><td>₹12,600</td></tr>
+        <tr><td><strong>Cess (4%)</strong></td><td>–</td><td>₹12,504</td></tr>
+        <tr><td colspan="2"><strong>Total Tax Payable</strong></td><td><strong>₹3,25,104</strong></td></tr>
+      </tbody>
+    </table>
+    
+    <h3>Old Regime (FY 2024–25 / AY 2025–26)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Amount (₹)</th>
+          <th>Total (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Salary Income</td><td>₹16,50,000</td><td>–</td></tr>
+        <tr><td>Other Income</td><td>₹20,000</td><td>–</td></tr>
+        <tr><td><strong>Total Gross Income</strong></td><td>–</td><td><strong>₹16,70,000</strong></td></tr>
+        <tr><td>Deduction: Section 80C</td><td>₹1,50,000</td><td>–</td></tr>
+        <tr><td>Deduction: Section 80TTA</td><td>₹8,000</td><td>₹1,70,000</td></tr>
+        <tr><td>Deduction: Section 80D</td><td>₹12,000</td><td>–</td></tr>
+        <tr><td><strong>Gross Taxable Income</strong></td><td>–</td><td><strong>₹15,00,000</strong></td></tr>
+        <tr><td><strong>Total Tax Payable</strong></td><td>–</td><td><strong>₹2,73,000</strong></td></tr>
+      </tbody>
+    </table>
+    
+
+  <h2>Which Regime is Better?</h2>
+  <p>When comparing both regimes, the calculated tax under the new regime can offer greater savings at certain income levels. For example, at ₹15 lakh income, new regime tax at ₹97,500 vs. old regime tax ₹1,17,000 – saving of ₹19,500.</p>
+
+  <h2>Final Notes</h2>
+  <ul>
+    <li>Maintain clear documentation (e.g., rent receipts) especially if claiming HRA or LTA.</li>
+    <li>Standard deduction differs by regime: ₹50,000 under old vs. ₹75,000 under new.</li>
+    <li>Rebate under Section 87A may reduce tax liability to zero if eligible.</li>
+    <li>TDS is deducted monthly by employer; reconcile final liability while filing ITR.</li>
+  </ul>
+
+  <p><em>Disclaimer: For precise assessment, consider consulting a tax professional or using an updated income tax calculator tool.</em></p>
+</div>

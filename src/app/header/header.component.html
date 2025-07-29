@@ -1,9 +1,17 @@
 <header class="header">
-  <h3>SharmaRk</h3>
-  <nav class="nav">
-    <a routerLink="/" routerLinkActive="active">Home</a>
-    <a routerLink="/about" fragment="last-section" routerLinkActive="active">About</a>
-    <a routerLink="/app-contact" routerLinkActive="active">Contact</a>
-    <a routerLink="/app-founder" routerLinkActive="active">Founder</a>
+  <a routerLink="/" class="logo">
+    <img src="assets/images/logo1.png" alt="Sharma RK & Co Logo" class="logo-image" />
+  </a>
+
+  <!-- Hamburger icon (visible on mobile) -->
+  <div class="menu-icon" (click)="toggleMenu()">☰</div>
+
+  <!-- Navigation menu -->
+  <nav class="nav" [class.open]="isMenuOpen">
+    <a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Home</a>
+    <a routerLink="/app-founder" routerLinkActive="active" (click)="closeMenu()">Founder</a>
+    <a routerLink="/app-calculator" routerLinkActive="active" (click)="closeMenu()">Calculator</a>
+    <a routerLink="/about" fragment="last-section" routerLinkActive="active" (click)="closeMenu()">About</a>
+    <a routerLink="/app-contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
   </nav>
-</header> 
+</header>

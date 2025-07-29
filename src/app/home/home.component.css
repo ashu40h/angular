@@ -1,130 +1,514 @@
+/* General Body and Container Styles (ADJUSTED FOR BETTER MOBILE FLUIDITY) */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0; /* Ensure no default body padding */
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  overflow-x: hidden; /* Prevent horizontal scroll due to content overflow */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%; /* Ensure container takes full available width on all screens */
+}
+
+/* Hero Section - Base (Desktop) Styles (NO CHANGES - As per previous instructions for desktop) */
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 3rem 2rem;
-    background: linear-gradient(150deg, #007bff, #0056b3);
-    color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  padding: 80px 20px; /* Desktop spacing */
+  background: linear-gradient(150deg, #0837c3, #879ece);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.hero .hero-left-spacer {
+  flex-grow: 0; /* Pushes content right on desktop */
+}
+
+.hero-right-content {
+  flex-shrink: 0;
+  text-align: left; /* Desktop right alignment */
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding-left: 20px; /* Desktop spacing */
+}
+
+.hero-text {
+  margin-bottom: 0;
+}
+
+.hero-text h1 {
+  font-size: 3.8rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+  font-style: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text h1:first-of-type {
+  margin-bottom: 10px;
+}
+
+.hero-content {
+  margin-top: 30px;
+  align-items: center;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.cta-btn {
+  padding: 1rem 2.5rem;
+  background-color: #facc15;
+  color: #1e1e1e;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn:hover {
+  background-color: #d97706;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* News Section (NO CHANGES - As per previous instructions for desktop) */
+.news-section {
+  padding: 50px 20px; /* Desktop spacing */
+  background-color: #fdfdfd;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-top: -30px;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.news-heading {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #1a237e;
+  margin-bottom: 30px; /* Desktop spacing */
+  position: relative;
+}
+
+.news-heading::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: #facc15;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  border-radius: 2px;
+}
+
+.news-ticker {
+  height: 250px; /* Desktop height */
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.news-items {
+  display: flex;
+  flex-direction: column;
+  animation: scrollNews var(--news-duration, 20s) linear infinite;
+}
+
+.news-items:hover {
+  animation-play-state: paused;
+}
+
+.news-item {
+  padding: 15px 20px; /* Desktop spacing */
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-item:hover {
+  background-color: #f9f9f9;
+}
+
+.news-item h4 {
+  color: #2c3e50;
+  margin: 0 0 5px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.news-item p {
+  margin: 0 0 5px 0;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.news-item small {
+  font-size: 0.8rem;
+  color: #999;
+  display: block;
+  text-align: left;
+}
+
+@keyframes scrollNews {
+  0% {
+    transform: translateY(0);
   }
-  
-  .hero-text {
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Features Section (NO CHANGES - As per previous instructions for desktop) */
+.features {
+  padding: 80px 20px; /* Desktop spacing */
+  background-color: #f8f8f8;
+  text-align: left;
+}
+
+.features h2 {
+  font-size: 2.5rem;
+  color: #1a237e;
+  margin-bottom: 50px; /* Desktop spacing */
+  position: relative;
+}
+
+.features h2::after {
+  content: '';
+  width: 100px;
+  height: 5px;
+  background-color: #facc15;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -15px;
+  border-radius: 3px;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Desktop spacing */
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 380px;
+  padding: 30px; /* Desktop spacing */
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  color: #0837c3;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* --- Media Queries for Responsiveness (MOBILE-ONLY CHANGES START HERE) --- */
+
+/* For screens up to 1000px wide (tablets and larger phones) */
+@media (max-width: 1000px) {
+  .container {
+    padding: 0 10px; /* Reduced container padding for slightly more space */
+  }
+  .hero {
+    flex-direction: column; /* Stack content vertically */
+    justify-content: left; /* Center stacked content vertically */
+    align-items: left; /* Center stacked content horizontally */
+    padding: 20px 10px; /* MORE CONDENSED for mobile */
+  }
+
+  .hero .hero-left-spacer {
+    display: none; /* Hide the spacer on mobile */
+  }
+
+  .hero-right-content {
     max-width: 100%;
+    text-align: left; /* Centers all text and inline content for mobile */
+    padding-left: 0;
   }
-  
+
   .hero-text h1 {
     font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    line-height: 1.05; /* Tighter line height for mobile */
   }
-  
-  .hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+
+  .hero-text h1:first-of-type {
+    margin-bottom: 5px; /* Tighter space between lines */
   }
-  
+
+  .hero-content {
+    margin-top: 10px; /* MORE CONDENSED */
+  }
+
+  .hero-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 8px; /* MORE CONDENSED */
+  }
+
   .cta-btn {
-    padding: 0.8rem 2rem;
-    background-color: #ffcc00;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    width: auto;
+    max-width: 300px;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem; /* MORE CONDENSED */
+    margin-top: 0.8rem; /* MORE CONDENSED */
   }
-  
-  .cta-btn:hover {
-    background-color: #ff9900;
-    color: white;
+
+  .news-section {
+    padding: 15px 8px; /* MORE CONDENSED */
+    margin-top: -10px; /* Adjust overlap slightly for tighter section */
   }
-  
-  .hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  .news-heading {
+    font-size: 1.8rem;
+    margin-bottom: 15px; /* MORE CONDENSED */
   }
-  
-  /* Features Section */
+
+  .news-heading::after {
+    bottom: -5px; /* Brings underline closer */
+  }
+
+  .news-ticker {
+    height: 120px; /* MORE CONDENSED */
+  }
+
+  .news-item {
+    padding: 8px 10px; /* MORE CONDENSED */
+  }
+
+  .news-item h4 {
+    font-size: 1.1rem;
+    margin: 0 0 2px 0; /* Tighter spacing */
+  }
+
+  .news-item p {
+    font-size: 0.9rem;
+    margin: 0 0 2px 0; /* Tighter spacing */
+  }
+
   .features {
-    padding: 3rem 2rem;
-    background-color: #f8f9fa;
+    padding: 20px 8px; /* MORE CONDENSED */
   }
-  
+
   .features h2 {
-    text-align: center;
     font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #333;
+    margin-bottom: 20px; /* MORE CONDENSED */
   }
-  
+
+  .features h2::after {
+    bottom: -8px; /* Brings underline closer */
+  }
+
   .feature-cards {
-    display: flex;
-    justify-content: space-between;
-    gap: 1.5rem;
+    gap: 15px; /* MORE CONDENSED */
   }
-  
+
   .card {
-    flex: 1;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 90%;
+    max-width: 450px;
+    padding: 10px; /* MORE CONDENSED */
+    margin-bottom: 10px; /* MORE CONDENSED */
   }
-  
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  }
-  
+
   .card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #007bff;
+    font-size: 1.4rem;
+    margin-bottom: 5px; /* Tighter spacing */
   }
-  
+
   .card p {
-    font-size: 1rem;
-    color: #555;
+    font-size: 0.85rem;
   }
-  
-  /* Call-to-Action Section */
-  .cta {
-    text-align: center;
-    padding: 0.8rem 2rem;
-    background: linear-gradient(135deg, #ffcc00, #ff9900);
-    color: white;
-    border-radius: 10px;
-    margin-top: 2rem;
+}
+
+/* For screens up to 768px wide (smaller tablets, larger phones) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 8px; /* Further reduced container padding */
   }
-  
-  .cta h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  .hero {
+    padding: 15px 8px; /* EVEN MORE CONDENSED */
   }
-  
-  .cta p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+
+  .hero-text h1 {
+    font-size: 2rem; /* SMALLER FONT */
   }
-  
+
+  .hero-content h2 {
+    font-size: 1.3rem; /* SMALLER FONT */
+  }
+
   .cta-btn {
-    background-color: white;
-    color: #ff9900;
-    border: 2px solid white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    padding: 0.4rem 1rem; /* EVEN SMALLER BUTTON */
+    font-size: 0.8rem;
   }
-  
-  .cta-btn:hover {
-    background-color: #ff9900;
-    color: white;
-    border-color: #ffcc00;
+
+  .news-section {
+    padding: 10px 5px; /* EVEN MORE CONDENSED */
   }
+
+  .news-heading {
+    font-size: 1.6rem;
+    margin-bottom: 10px; /* Tighter spacing */
+  }
+
+  .news-ticker {
+    height: 100px; /* EVEN MORE CONDENSED */
+  }
+
+  .news-item {
+      padding: 6px 8px; /* EVEN MORE CONDENSED */
+      min-height: 40px; /* Add a min-height to ensure content fits, adjust as needed */
+      display: flex; /* Use flex to align content if it overflows vertically */
+      flex-direction: column;
+      justify-content: center;
+  }
+
+  .news-item h4 {
+    font-size: 0.9rem;
+  }
+
+  .news-item p {
+    font-size: 0.75rem;
+  }
+
+  .features {
+    padding: 15px 5px; /* EVEN MORE CONDENSED */
+  }
+
+  .features h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px; /* Tighter spacing */
+  }
+
+  .card {
+    padding: 10px; /* Consistent with 1000px breakpoint */
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: 0.75rem;
+  }
+}
+
+/* For screens up to 480px wide (most mobile phones) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 5px; /* Max reduced container padding */
+  }
+  .hero {
+    padding: 10px 5px; /* MAX CONDENSED */
+  }
+
+  .hero-text h1 {
+    font-size: 1.6rem; /* SMALLEST H1 */
+  }
+
+  .hero-content h2 {
+    font-size: 1rem; /* SMALLEST H2 */
+  }
+
+  .cta-btn {
+    width: 90%;
+    padding: 0.4rem 0.8rem; /* MAX SMALL BUTTON */
+    font-size: 0.75rem;
+  }
+
+  .news-ticker {
+    height: 80px; /* MAX CONDENSED */
+  }
+
+  .news-item {
+    padding: 5px 6px; /* MAX CONDENSED */
+    min-height: 35px; /* Adjust min-height for even smaller screens */
+  }
+
+  .news-item h4 {
+    font-size: 0.8rem;
+  }
+
+  .news-item p {
+    font-size: 0.65rem;
+  }
+
+  .features h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .card {
+    padding: 8px; /* MAX CONDENSED CARD */
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.7rem;
+  }
+}

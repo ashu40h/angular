@@ -1,51 +1,116 @@
-.fee-estimator {
-  background: #fdfdfd;
-  padding: 40px 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.05);
-  max-width: 600px;
-  margin: auto;
-  font-family: 'Poppins', sans-serif;
+/* Reset and Base Styles */
+body {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f9fafb;
+  color: #2c3e50;
+}
+
+/* Container */
+.container {
+  max-width: 1600px;  /* was 900px */
+  margin: 40px auto;
+  padding: 20px 32px; /* more horizontal padding */
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+}
+
+/* Headings */
+h1 {
+  font-size: 3em;
+  margin-bottom: 16px;
+  color: #1e3a8a; /* corporate blue */
 }
 
 h2 {
-  text-align: center;
-  color: #444;
-  margin-bottom: 24px;
+  font-size: 2em;
+  margin-top: 32px;
+  color: #0f172a; /* deep navy */
+  border-left: 5px solid #f4f2ef;
+  padding-left: 12px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+h3 {
+  font-size: 1.4em;
+  color: #374151;
+  margin-top: 24px;
 }
 
-label {
-  font-weight: 500;
-  color: #555;
+/* Paragraphs */
+p {
+  margin: 12px 0;
+  color: #334155;
 }
 
-input, select, button {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 16px;
+/* Lists */
+ul, ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
 }
 
-button {
-  background-color: #222;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s ease;
+ul li, ol li {
+  margin-bottom: 8px;
+}
+p,
+li,
+td,
+th,
+span,
+small {
+  font-size: 1.1em;
 }
 
-button:hover {
-  background-color: #444;
+
+/* Code blocks and inline code */
+code {
+  font-family: 'Courier New', monospace;
+  background-color: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #b45309;
 }
 
-.result {
-  margin-top: 20px;
-  background-color: #eef6f5;
-  padding: 16px;
-  border-left: 4px solid #00796b;
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #eef1f8;
+  color: #333;
+  font-weight: 600;
+}
+
+
+tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+/* Examples Box */
+.example {
+  background-color: #f9f9f7;
+  border: 2px solid #fafaf9;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Emphasized disclaimer */
+em {
+  color: #6b7280;
+  font-style: italic;
 }

@@ -9,5 +9,7 @@ export const routes: Routes = [
   {path: 'app-todo', component: TodoComponent},
   {path: 'app-contact', loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent)},
   {path: 'app-founder', loadComponent: () => import('./founder/founder.component').then(m => m.FounderComponent)},
-  {path: 'app-bottom', loadComponent: () => import('./bottom/bottom.component').then(m => m.BottomComponent)}
+  {path: 'app-bottom', loadComponent: () => import('./bottom/bottom.component').then(m => m.BottomComponent)},
+  {path: 'app-calculator', loadComponent: () => import('./calculator/calculator.component').then(m => m.TaxCalculatorComponent)},
+  {path: 'app-admin-news', loadComponent: () => import('./admin-news/admin-news.component').then(m => m.AdminNewsComponent)},
 ];
